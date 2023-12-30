@@ -1,4 +1,4 @@
 ### Simples Examples To Explain SOLID Principles 
 
 
-![S.O.L.I.D.jpeg]
+![i1](S.O.L.I.D.jpeg)
