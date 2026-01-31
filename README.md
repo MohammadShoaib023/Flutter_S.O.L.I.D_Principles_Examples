@@ -58,6 +58,8 @@ design and responsibilities.
 **Why it matters:** Smaller, focused classes are easier to test, change, and
 reuse without breaking unrelated behavior.
 
+---
+
 ### OCP — Open/Closed Principle
 
 **Idea:** Open for extension, closed for modification.
@@ -69,6 +71,8 @@ reuse without breaking unrelated behavior.
 
 **Why it matters:** You can add new behavior without editing existing, stable
 code.
+
+---
 
 ### LSP — Liskov Substitution Principle
 
@@ -82,6 +86,8 @@ code.
 
 **Why it matters:** Substitutability keeps polymorphism safe and predictable.
 
+---
+
 ### ISP — Interface Segregation Principle
 
 **Idea:** Clients should not be forced to depend on methods they do not use.
@@ -94,9 +100,12 @@ code.
 **Why it matters:** Smaller interfaces reduce unused code and prevent fake
 implementations.
 
+---
+
 ### DIP — Dependency Inversion Principle
 
 **Idea:** High-level modules should depend on abstractions, not concretions.
+Details should depend on abstractions, not the other way around.
 
 - **Before:** `Email` creates concrete services directly, tightly coupling the
   high-level class to low-level details.
@@ -104,3 +113,9 @@ implementations.
   are injected.
 
 **Why it matters:** Abstractions make code easier to test, swap, and extend.
+You can add new providers (e.g., a new email service) without changing
+the high-level business logic.
+
+**In practice:** Use interfaces/abstract classes and move dependencies
+up to abstractions so both high-level and low-level modules rely on the
+same contract.
