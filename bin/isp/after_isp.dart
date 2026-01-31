@@ -1,41 +1,32 @@
-abstract class IPayment implements ICreditCardPayment {}
-
-class Payment implements IPayment {
-  @override
-  void payWithCreditCard() {
-    //  implement payWithCreditCard
-  }
-}
-
-abstract class IAndroidPayment {
-  void patWithGooglePay();
-}
-
-abstract class IIosPayment {
-  void payWithApplePay();
-}
-
 abstract class ICreditCardPayment {
   void payWithCreditCard();
 }
 
-class AndroidPayment implements IAndroidPayment {
+abstract class IApplePay {
+  void payWithApplePay();
+}
+
+abstract class IGooglePay {
+  void payWithGooglePay();
+}
+
+class AndroidPayment implements IGooglePay {
   @override
-  void patWithGooglePay() {
-    // implement patWithGooglePay
+  void payWithGooglePay() {
+    print('Google Pay payment');
   }
 }
 
-class IosPayment implements IIosPayment {
+class IosPayment implements IApplePay {
   @override
   void payWithApplePay() {
-    //  implement payWithApplePay
+    print('Apple Pay payment');
   }
 }
 
 class CreditCardPayment implements ICreditCardPayment {
   @override
   void payWithCreditCard() {
-    //  implement payWithCreditCard
+    print('Credit card payment');
   }
 }

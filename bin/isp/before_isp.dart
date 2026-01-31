@@ -1,56 +1,56 @@
 abstract class IPayment {
   void payWithApplePay();
-  void patWithGooglePay();
+  void payWithGooglePay();
   void payWithCreditCard();
 }
 
 class AndroidPayment implements IPayment {
   @override
-  void patWithGooglePay() {
-    // implement patWithGooglePay
+  void payWithApplePay() {
+    throw UnsupportedError('Apple Pay is not supported on Android.');
   }
 
   @override
-  void payWithApplePay() {
-    //  implement payWithApplePay
+  void payWithGooglePay() {
+    print('Google Pay payment');
   }
 
   @override
   void payWithCreditCard() {
-    //  implement payWithCreditCard
+    print('Credit card payment');
   }
 }
 
 class IosPayment implements IPayment {
   @override
-  void patWithGooglePay() {
-    //  implement patWithGooglePay
+  void payWithApplePay() {
+    print('Apple Pay payment');
   }
 
   @override
-  void payWithApplePay() {
-    //  implement payWithApplePay
+  void payWithGooglePay() {
+    throw UnsupportedError('Google Pay is not supported on iOS.');
   }
 
   @override
   void payWithCreditCard() {
-    //  implement payWithCreditCard
+    print('Credit card payment');
   }
 }
 
 class CreditCardPayment implements IPayment {
   @override
-  void patWithGooglePay() {
-    //  implement patWithGooglePay
+  void payWithApplePay() {
+    throw UnsupportedError('Apple Pay is not supported for card-only.');
   }
 
   @override
-  void payWithApplePay() {
-    //  implement payWithApplePay
+  void payWithGooglePay() {
+    throw UnsupportedError('Google Pay is not supported for card-only.');
   }
 
   @override
   void payWithCreditCard() {
-    //  implement payWithCreditCard
+    print('Credit card payment');
   }
 }
