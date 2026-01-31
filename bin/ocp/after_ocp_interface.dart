@@ -6,8 +6,11 @@ class JuniorEmployee implements IEmployee {
   final String id;
   final String name;
   final double salary;
-  const JuniorEmployee(
-      {required this.id, required this.name, required this.salary});
+  const JuniorEmployee({
+    required this.id,
+    required this.name,
+    required this.salary,
+  });
 
   @override
   double calculateOverTime(double hours) {
@@ -19,8 +22,11 @@ class SeniorEmployee implements IEmployee {
   final String id;
   final String name;
   final double salary;
-  const SeniorEmployee(
-      {required this.id, required this.name, required this.salary});
+  const SeniorEmployee({
+    required this.id,
+    required this.name,
+    required this.salary,
+  });
 
   @override
   double calculateOverTime(double hours) {
@@ -31,9 +37,9 @@ class SeniorEmployee implements IEmployee {
 void main() {
   final juniorEmployee = JuniorEmployee(id: '1', name: 'M', salary: 5000);
   print(
-      'juniorEmployee overtime = ${juniorEmployee.calculateOverTime(10)} USD');
+      'junior overtime = ${juniorEmployee.calculateOverTime(10)} USD');
 
   final seniorEmployee = SeniorEmployee(id: '2', name: 'K', salary: 5000);
   print(
-      'seniorEmployee overtime = ${seniorEmployee.calculateOverTime(10)} USD');
+      'senior overtime = ${seniorEmployee.calculateOverTime(10)} USD');
 }
