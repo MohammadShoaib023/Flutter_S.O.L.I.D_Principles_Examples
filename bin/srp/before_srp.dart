@@ -1,16 +1,16 @@
 // Before SRP
 class TransferMoney {
   void transferLocal(double amount) {
-    // implementation
-    sendSmsMessage();
+    // Does transfer, notification, and persistence: multiple responsibilities.
+    _sendSmsMessage();
+    _saveTransaction();
   }
 
-  void sendSmsMessage() {
+  void _sendSmsMessage() {
     // implementation
+  }
 
-    // then save transaction to DB
-    {
-      // implementation
-    }
+  void _saveTransaction() {
+    // implementation
   }
 }
