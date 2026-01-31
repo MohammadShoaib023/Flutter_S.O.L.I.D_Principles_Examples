@@ -24,21 +24,6 @@ Small, runnable Dart examples that show each SOLID principle with
   - `bin/dip/before_dip.dart`
   - `bin/dip/after_dip.dart`
 
-## Run examples
-
-```sh
-dart bin/srp/before_srp.dart
-dart bin/srp/after_srp.dart
-dart bin/ocp/before_ocp.dart
-dart bin/ocp/after_ocp_interface.dart
-dart bin/ocp/after_ocp_abstract.dart
-dart bin/lsp/before_lsp.dart
-dart bin/lsp/after_lsp.dart
-dart bin/isp/before_isp.dart
-dart bin/isp/after_isp.dart
-dart bin/dip/before_dip.dart
-dart bin/dip/after_dip.dart
-```
 
 ## Tutorial
 
