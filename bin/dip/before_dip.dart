@@ -1,6 +1,6 @@
 class Email {
   final GmailService _gmailService = GmailService();
-  final OutLookService _outlookService = OutLookService();
+  final OutlookService _outlookService = OutlookService();
 
   void sendEmailByGmail() => _gmailService.sendEmail('Say Hello', 'Hello');
 
@@ -9,13 +9,13 @@ class Email {
 
 class GmailService {
   void sendEmail(String title, String content) {
-    // implementation
+    print('Gmail: $title - $content');
   }
 }
 
-class OutLookService {
+class OutlookService {
   void sendEmail(String title, String content) {
-    // implementation
+    print('Outlook: $title - $content');
   }
 }
 

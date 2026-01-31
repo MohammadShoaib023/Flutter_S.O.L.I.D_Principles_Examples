@@ -13,19 +13,19 @@ class Email {
 class GmailService implements IMessage {
   @override
   void sendEmail(String title, String content) {
-    print('Send By Gmail');
+    print('Gmail: $title - $content');
   }
 }
 
-class OutLook implements IMessage {
+class OutlookService implements IMessage {
   @override
   void sendEmail(String title, String content) {
-    print('Send By Outlook');
+    print('Outlook: $title - $content');
   }
 }
 
 void main() {
-  // final emailService = Email(OutLookService());
+  // final emailService = Email(OutlookService());
   final emailService = Email(GmailService());
   emailService.sendEmail('title', 'hello');
 }
