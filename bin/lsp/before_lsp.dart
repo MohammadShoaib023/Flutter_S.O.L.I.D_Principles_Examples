@@ -1,33 +1,32 @@
 class UploadFileService {
-  void uploadFile() {
-    print('Parent Class : Uploading file...');
+  void uploadFile(String path) {
+    print('Uploading file: $path');
   }
 }
 
 class UploadVideo extends UploadFileService {
-  void uploadVideo() {
-    print('Video child Class : Uploading Video...');
+  @override
+  void uploadFile(String path) {
+    if (!path.endsWith('.mp4')) {
+      throw UnsupportedError('UploadVideo only supports .mp4 files');
+    }
+    print('Uploading video: $path');
   }
 }
 
 class UploadImage extends UploadFileService {
-  void uploadImage() {
-    print('Image child Class : Uploading Image...');
+  @override
+  void uploadFile(String path) {
+    if (!path.endsWith('.png')) {
+      throw UnsupportedError('UploadImage only supports .png files');
+    }
+    print('Uploading image: $path');
   }
 }
 
 void main() {
-  final data = ['file.pdf', 'video.mp4', 'image.png'];
-  late UploadFileService uploadFile;
+  final uploader = UploadVideo();
 
-  for (final item in data) {
-    if (item.endsWith('mp4')) {
-      uploadFile = UploadVideo();
-    } else if (item.endsWith('png')) {
-      uploadFile = UploadImage();
-    } else {
-      uploadFile = UploadFileService();
-    }
-    uploadFile.uploadFile();
-  }
+  // LSP violation: caller expects any UploadFileService to accept any file.
+  uploader.uploadFile('file.pdf');
 }
